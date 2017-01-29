@@ -9,9 +9,8 @@
 </style>
 
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+    <div>
+        <div>
                 <div class="panel panel-default">
                     <div class="panel-heading">Users
                     <a class="pull-right action-link">Create New User</a>
@@ -57,7 +56,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </template>
 

@@ -9,12 +9,11 @@
 </style>
 
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
+    <div>
+            <div>
+                <div class="panel panel-default" v-if="state == 'list'">
                     <div class="panel-heading">
-                        Invoices<a class="pull-right action-link">Create New Invoice</a>
+                        Invoices<a class="pull-right action-link" @click="state='create'">Create New Invoice</a>
                     </div>
 
                     <div class="panel-body">
@@ -51,8 +50,16 @@
                         </table>
                     </div>
                 </div>
+                <div class="panel fffff panel-default" v-if="state == 'create'">
+                    <div class="panel-heading">
+                        Create Invoice<a class="pull-right action-link" @click="state='list'">Cancel</a>
+                    </div>
+                    <div class="panel-body">
+                        <h1>Create form</h1>
+                    </div>
+                </div>
             </div>
-        </div>
+
     </div>
 </template>
 
@@ -64,7 +71,9 @@
 
         data() {
             return {
-                invoices: []
+                invoices: [],
+                state: "list",
+
             }
         },
 

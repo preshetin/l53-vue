@@ -10,6 +10,7 @@
                 <div class="panel-body">
                     <user-manager></user-manager>
                     <invoice-manager></invoice-manager>
+                    <example></example>
                 </div>
             </div>
         </div>

@@ -13,7 +13,10 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+// Vue.component('example', require('./components/Example.vue'));
+
+Vue.component('user-manager', require('./components/UserManager.vue'));
+Vue.component('invoice-manager', require('./components/InvoiceManager.vue'));
 
 const app = new Vue({
     el: '#app'

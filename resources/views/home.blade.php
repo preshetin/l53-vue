@@ -8,8 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
-                    <example></example>
+                    <user-manager></user-manager>
+                    <invoice-manager></invoice-manager>
                 </div>
             </div>
         </div>

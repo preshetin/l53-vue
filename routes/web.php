@@ -11,9 +11,21 @@
 |
 */
 
+use App\User;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/users', function() {
+        return User::all();
+    });
+    Route::get('/invoices', function() {
+        return \App\Invoice::all();
+    });
+});
+
 
 Auth::routes();
 

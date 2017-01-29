@@ -1,9 +1,21 @@
+<style scoped>
+    .action-link {
+        cursor: pointer;
+    }
+
+    .m-b-none {
+        margin-bottom: 0;
+    }
+</style>
+
 <template>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Invoices</div>
+                    <div class="panel-heading">
+                        Invoices<a class="pull-right action-link">Create New Invoice</a>
+                    </div>
 
                     <div class="panel-body">
                         <!-- No Invoices Notice -->
@@ -15,26 +27,25 @@
                         <table class="table table-borderless m-b-none" v-if="invoices.length > 0">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Email</th>
+                                <th>Receipt</th>
+                                <th>Amount</th>
                             </tr>
                             </thead>
 
                             <tbody>
                             <tr v-for="invoice in invoices">
                                 <td style="vertical-align: middle;">
-                                    {{ invoice.name }}
+                                    {{ invoice.receipt }}
                                 </td>
                                 <td style="vertical-align: middle;">
-                                    {{ invoice.email }}
+                                    {{ invoice.amount }}
                                 </td>
 
-                                <!-- Delete Button -->
-                                <!--<td style="vertical-align: middle;">-->
-                                <!--<a class="action-link text-danger" @click="revoke(invoice)">-->
-                                <!--Delete-->
-                                <!--</a>-->
-                                <!--</td>-->
+                                <td style="vertical-align: middle;">
+                                <a class="action-link text-danger" @click="revoke(invoice)">
+                                Delete
+                                </a>
+                                </td>
                             </tr>
                             </tbody>
                         </table>

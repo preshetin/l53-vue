@@ -1,9 +1,21 @@
+<style scoped>
+    .action-link {
+        cursor: pointer;
+    }
+
+    .m-b-none {
+        margin-bottom: 0;
+    }
+</style>
+
 <template>
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Users</div>
+                    <div class="panel-heading">Users
+                    <a class="pull-right action-link">Create New User</a>
+                    </div>
 
                     <div class="panel-body">
                         <!-- No Users Notice -->
@@ -15,13 +27,18 @@
                         <table class="table table-borderless m-b-none" v-if="users.length > 0">
                             <thead>
                             <tr>
+                                <th>Id</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th></th>
                             </tr>
                             </thead>
 
                             <tbody>
                             <tr v-for="user in users">
+                                <td style="vertical-align: middle;">
+                                    {{ user.id }}
+                                </td>
                                 <td style="vertical-align: middle;">
                                     {{ user.name }}
                                 </td>
@@ -29,12 +46,11 @@
                                     {{ user.email }}
                                 </td>
 
-                                <!-- Delete Button -->
-                                <!--<td style="vertical-align: middle;">-->
-                                    <!--<a class="action-link text-danger" @click="revoke(user)">-->
-                                        <!--Delete-->
-                                    <!--</a>-->
-                                <!--</td>-->
+                                <td style="vertical-align: middle;">
+                                    <a class="action-link text-danger">
+                                        Delete
+                                    </a>
+                                </td>
                             </tr>
                             </tbody>
                         </table>

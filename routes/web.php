@@ -24,6 +24,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/invoices', function() {
         return \App\Invoice::all();
     });
+    Route::post('/invoices', function(\Illuminate\Http\Request $request) {
+        
+        $invoice = \App\Invoice::create($request->all());
+        
+        return response()->json(['invoice' => $invoice]);
+    });
 });
 
 
